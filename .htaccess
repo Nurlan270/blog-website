@@ -1,0 +1,24 @@
+RewriteEngine On
+RewriteBase /
+
+ServerSignature Off
+AddDefaultCharset UTF-8
+
+ErrorDocument 404 /errors/404.php
+
+RewriteRule ^$ ./index.php [L]
+
+# Pages
+RewriteRule ^About-us?$ ./pages/about.php [NC,L]
+RewriteRule ^Our-services?$ ./pages/services.php [NC,L]
+RewriteRule ^Article?$ ./pages/single.php [NC,L]
+RewriteRule ^Topics?$ ./pages/topics.php [NC,L]
+
+# Auth
+RewriteRule ^auth/Registration?$ ./auth/reg.php [NC,L]
+RewriteRule ^auth/Login?$ ./auth/log.php [NC,L]
+RewriteRule ^auth/Logout?$ ./app/controllers/logout.php [NC,L]
+
+# Admin
+RewriteRule ^ADMIN?$ ./admin/posts/index.php [NC,L]
+RewriteRule ^Admin?$ ./admin/posts/index.php [NC,L]
